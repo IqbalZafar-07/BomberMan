@@ -1,0 +1,31 @@
+.grid {
+  background-color: rgb(219, 177, 177);
+  height: 490px;
+  width: 494px;
+  display: flex;
+  flex-wrap: wrap;
+  margin: auto;
+}
+.grid div {
+  height: 50px;
+  width: 50px;
+  border-style: ridge;
+}
+.clic {
+  background-color: rgb(13, 209, 62);
+}
+.bomb {
+  background-color: red;
+  background-image: url("https://img.icons8.com/emoji/48/000000/bomb-emoji.png");
+}
+#gameScore {
+  text-align: center;
+}
+#resultDisplay {
+  text-align: center;
+}
+#resetButton {
+  margin: 0;
+  position: absolute;
+  left: 48%;
+}
