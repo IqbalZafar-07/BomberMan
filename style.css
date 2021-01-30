@@ -1,5 +1,4 @@
 .grid {
-  background-color: rgb(219, 177, 177);
   height: 490px;
   width: 494px;
   display: flex;
@@ -12,7 +11,7 @@
   border-style: ridge;
 }
 .clic {
-  background-color: rgb(13, 209, 62);
+  background-color: rgb(12, 128, 1);
 }
 .bomb {
   background-color: red;
@@ -28,4 +27,7 @@
   margin: 0;
   position: absolute;
   left: 48%;
+}
+.box {
+  background-color: rgb(219, 177, 177);;
 }
