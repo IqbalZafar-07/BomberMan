@@ -1,21 +1,26 @@
 .grid {
-  height: 490px;
-  width: 494px;
+  height: 400px;
+  width: 404px;
   display: flex;
   flex-wrap: wrap;
   margin: auto;
 }
 .grid div {
-  height: 50px;
-  width: 50px;
-  border-style: ridge;
+  height: 33px;
+  width: 33px;
+  border: 5px solid;
+  border-radius: 8px;
+  border-color: #89f0ee #07a8a6 #07a8a6 #89f0ee;
 }
 .clic {
   background-color: rgb(12, 128, 1);
+  border-color: rgb(12, 128, 1);
 }
 .bomb {
   background-color: red;
   background-image: url("https://img.icons8.com/emoji/48/000000/bomb-emoji.png");
+  background-size: 33px, 33px;
+  border-color: red;
 }
 #gameScore {
   text-align: center;
@@ -24,10 +29,21 @@
   text-align: center;
 }
 #resetButton {
+  height: 40px;
+  width: 90px;
   margin: 0;
   position: absolute;
-  left: 48%;
+  text-align: center;
+  font-size: 20px;
+  left: 47%;
+  color: white;
+  background-color: black;
+  border-radius: 8px;
+  opacity: .8;
 }
 .box {
-  background-color: rgb(219, 177, 177);;
+  background-color: rgb(97, 194, 242);
+}
+#resetButton:hover {
+  opacity: 1;
 }
