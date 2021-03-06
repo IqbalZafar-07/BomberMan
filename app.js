@@ -1,8 +1,6 @@
 const grid = document.querySelector('.grid');
     
-    let suffledArray= [];
-    let bombs = [];
-    const random = [];
+    let random = [];
     let score = document.getElementById("gameScore");
     let flag = true;
     let result = document.getElementById("resultDisplay");
@@ -16,30 +14,18 @@ const grid = document.querySelector('.grid');
               }
         }
 
-        
         for(let i= 0;i<9*9; i++) {
             
             const square = document.createElement('div');
 
-            if(random.indexOf(i+1) === -1){
-              suffledArray.push('safe');
-            }else{
-              suffledArray.push(i+1);
-            }
-
             square.setAttribute('id',"cell_"+(i+1));
-
-            if(suffledArray[i] != 'safe'){bombs.push(square);}
-
             square.setAttribute('class',"box");
             grid.appendChild(square);
             square.addEventListener('click',clicked);
 
             function clicked(){
-              if(suffledArray[i] === 'safe' && flag ){
-    
+              if(random.indexOf(i+1) === -1 && flag ){
                 square.className = 'clic';
-                
                 score.innerText = (Number)(score.innerText) + 1;
                 if(Number(score.innerText) === 71){result.innerText = "Win"; flag = false;}
                 square.removeEventListener('click',clicked);
@@ -52,14 +38,24 @@ const grid = document.querySelector('.grid');
               }
             }
         }
-        console.log(score.innerText);
     }
-
     createBoard();
+
     function show (){
       for(let i=0; i<=9; i++){
-        bombs[i].className = 'bomb';
+        document.getElementById(`cell_${random[i]}`).className = 'bomb';
       }
+    }
+
+    function reset () {
+        random = [];
+        score.innerHTML = "0";
+        flag = true;
+        result.innerHTML = "";
+        for(let i= 0;i<9*9; i++){
+          grid.removeChild(grid.firstChild);
+        }
+        createBoard();
     }
     // function debug(){
     //   for(let i=0; i<81; i++){
